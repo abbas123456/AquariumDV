@@ -1,0 +1,661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<a name="label" <h1><font size ="5" face="Calibri">
+Aquairum Data Visualiser v1.0
+</font></h1></a>
+
+<hr> </hr>
+<h1><font size ="5" face="Calibri">
+User Manual
+</font></h1>
+<p><font size ="3" face="Calibri">
+The following user manual aims to walk through and explain the basic components of the system. 
+</font></p>
+
+<ol>
+<font size ="3" face="Calibri"><li><a href="#label1">
+Introduction
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label2">
+Initial setup
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label3">
+Connecting to a data source
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label4">
+Working with mazes
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label5">
+Changing the visual aspect of the tank
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label6">
+Changing the contents of the tank and simulation aspects
+</a></li></font>
+
+<font size ="3" face="Calibri"><li><a href="#label7">
+Using the learning support tool
+</a></li></font>
+</ol> 
+
+<BR>&nbsp;</BR>
+
+<a name="label1"><p><b><font size ="4" face="Calibri">
+Introduction
+</font></b></p></a> 
+
+<hr> </hr>
+
+<p><font size ="3" face="Calibri">
+The Aquarium Data Visualiser is an artificial life simulation of a marine environment that can be used to visualise data from a relational database source. 
+The simulation aspect of the system can also be used as an learning support tool for primary school teachers.
+</font></p>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;</BR>
+
+<a name="label2"><p><b><font size ="4" face="Calibri">
+Initial setup
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri"><p>
+In order to run the application the java web plugin must be installed.
+</p>
+
+<p>
+To run the application go to <a href = "http://www.dcs.qmul.ac.uk/~mya3/project/project.jnlp"> http://www.dcs.qmul.ac.uk/~mya3/project/project.jnlp.</a>
+</p>
+
+<p>
+Once the application is open, an initial screen will display various options before beginning the simulation:
+</font></p>
+
+<p><img src="initial setup 1.jpg" /> </p>
+
+<font size ="3" face="Calibri"><p>
+Clicking on visualise will attempt to connect the simulation to a data source, clicking A-Life will start the simulation normally, clicking facts will open a set of learning facts, clicking activity will start the activity simulation of the learning tool and clicking quiz will open a set of questions related to the learning tool.
+
+</p></font>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;<BR>
+
+<a name="label3"><p><b><font size ="4" face="Calibri">
+Connecting to a data source
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri">
+
+<p><b>
+Introduction
+</b></p>	
+
+<p>
+The simulation can be used to visualise data by connecting to a relational data source such as an Oracle or MySQL database server. The visualisation works by associating each row of data with a shoal of fish in the simulation. The two main components of the fish's behaviour, their eyesight and speed, will then be directly influenced by the associated entity in the data source. The attributes of the different shoals will represent the relation between the different entities in the data source, rather than the exact values of the entities. For example, if the value of an entity is double the value of another entity, the attribute value of one shoal will be double the attribute value of another shoal and will lie within a specified range to ensure that the attributes are not too powerful or too weak. When connecting to a data source, the field to be used as the name of the shoal must be specified, as well as the field to be used as the attribute value of the shoal, known as the shoal performance measure. The shoal name can only be linked to a field of type text and the shoal performance measure can only be linked to a field of type integer. As with natural situations of competition, a group with better attributes will compete better for resources and therefore grow in numbers due to an increase in reproduction. This feature of competition is useful in knowing at a glance the level of performance of different entities by looking at the number of fish in the group. The value of the data entity that a shoal represents would therefore indirectly influence the size of the shoal.
+</p>
+
+<p><b>
+Instructions
+</b></p>	
+
+<ul>
+
+
+<li> 
+
+<li> 
+From the main menu click on visualise:
+</li>
+
+<p><img src="initial setup.jpg" /> </p>
+
+<li> 
+Or from the simulation, click on Tools --> Connect to Database:
+</li>
+
+<p><img src="database 1.jpg" /> </p>
+
+<li> 
+
+Select the appropriate database type, enter the server credentials and click ok:
+</li>
+
+<p><img src="database 2.jpg" /> </p>
+
+<li> 
+Select the database name, table name and the field names used for the shoal name and shoal performance measure and click ok:
+</li>
+
+<p><img src="database 3.jpg" /> </p>
+
+<li> 
+The keys at the bottom of the screen show the name of each entity and the shoal that it is represented by, as well as the actual value of the data entity in brackets:
+</li>
+
+<p><img src="database 6.jpg" /> </p>
+
+<li> 
+To disconnect from the database click on Tools --> Disconnect from Database:
+</li>
+
+<p><img src="database 4.jpg" /> </p>
+</font>
+
+</ul>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;<BR>
+
+<a name="label4"><p><b><font size ="4" face="Calibri">
+Working with mazes
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri">
+
+<p><b>
+Introduction
+</b></p>	
+
+<p>
+In order to test the fish's problem solving skills, mazes can be added to the tank. Research shows that the more hungry a fish is, the more innovation it displays when carrying out problem solving tasks. Therefore, depending on the complexity of the maze, some fish will be able to solve the maze and some will get stuck. Solving the maze will give the fish access to a secret compartment of food at the end of the maze, thereby giving the hungrier fish a fair chance to survive. This concept works by allowing by the hungrier fish to use a method of searching called backtracking. When a fish reaches a dead end, the backtracking method allows it to trace it steps back to the point in the maze where it had more than one path to go. The fish then chooses the path it didn't choose the previous attempt and keeps repeating this process until it finds the end of the maze. 
+</p>
+
+<p>
+The following diagram shows the different paths taken by a normal fish and a hungry fish. The normal fish reaches a dead end and stops there, the hungry fish also reaches the dead end but traces its steps back and tries a different path which leads to the end of the maze:
+</p>
+
+<p><img src="maze 1.jpg" /> </p>
+
+<p><b>
+Instructions
+</b></p>	
+
+<ul>
+<li>
+<p>
+Adding a pre defined maze:
+</p>	
+
+<ul>
+<li> 
+Click on Insert --> Maze:
+</li>
+
+<p><img src="maze 2.jpg" /> </p>
+
+<li> 
+Choose a maze:
+</li>
+
+<p><img src="maze 3.jpg" /> </p>
+
+<li> 
+Position the maze in the tank by moving the cursor:
+</li>
+
+<p><img src="maze 4.jpg" /> </p>
+
+<li> 
+Click the mouse button to confirm the position of the maze:
+</li>
+
+<p><img src="maze 5.jpg" /> </p>
+
+
+</ul>
+</li>
+
+<li> 
+<p>
+Adding a custom maze:
+</p>	
+
+<ul>
+
+<li>
+Click on Insert --> Maze:
+</li>
+
+<p><img src="maze 2.jpg" /> </p>
+
+<li>
+Select the create your own maze option:
+</li>
+
+<p><img src="maze 6.jpg" /> </p>
+
+<li>
+Create the walls by choosing the wall option and clicking on a square:
+</li>
+
+<p><img src="maze 7.jpg" /> </p>
+<p><img src="maze 8.jpg" /> </p>
+
+<li>
+Place a start position and end position by changing the cursor option:
+</li>
+
+<p><img src="maze 9.jpg" /> </p>
+
+<li>
+When happy with the maze click done:
+</li>
+
+<p><img src="maze 9a.jpg" /> </p>
+
+
+<li> 
+Position the maze in the tank by moving the cursor:
+</li>
+
+<p><img src="maze 10.jpg" /> </p>
+
+<li> 
+Click the mouse button to confirm the position of the maze:
+</li>
+
+<p><img src="maze 11.jpg" /> </p>
+
+</ul>
+</li>
+
+
+<li>
+Re-position a maze by clicking on it and dragging it.
+</li>
+
+<li>
+Remove a maze from the tank by clicking on it and pressing the delete key on the keyboard while keeping the mouse button pressed.
+</li>
+</ul>
+</font>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;<BR>
+
+<a name="label5"><p><b><font size ="4" face="Calibri">
+Changing the visual aspect of the tank
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri">
+
+<p><b>
+Introduction
+</b></p>
+
+<p>
+The visual aspect of the tank can be changed by adding scenery or changing the background for example.
+</p>
+
+<p><b>
+Instructions
+</b></p>
+
+<ul>
+
+<li>
+<p>Adding scenery:</p>
+
+<ul>
+<li>
+Click on Insert --> Scenery:
+</li>
+
+<p><img src="scenery 1.jpg" /> </p>
+
+<li>
+Choose an image:
+</li>
+
+<p><img src="scenery 2.jpg" /> </p>
+
+<li>
+Position the scenery in the tank by moving the cursor and click to confirm its position:
+</li>
+
+<p><img src="scenery 3.jpg" /> </p>
+
+<li>
+Re-position scenery by clicking on it and dragging it.
+</li>
+
+<li>
+Remove scenery from the tank by clicking on it and pressing the delete key on the keyboard while keeping the mouse button pressed.
+</li>
+
+</ul>
+</li>
+
+<li>
+<p> Changing the background:</p>
+<ul>
+
+<li>
+Click on Insert --> Scenery:
+</li>
+
+<p><img src="bg 1.jpg" /> </p>
+
+<li>
+Choose an image or browse for a file on your computer:
+</li>
+<p><img src="bg 2.jpg" /> </p>
+<p><img src="bg 3.jpg" /> </p>
+</ul>
+</li>
+
+<li>
+<p> Changing the appearance of a shoal:</p>
+<ul>
+
+<li>
+Click on the key at the bottom of the screen for the appropriate shoal:
+</li>
+
+<p><img src="colour 1.jpg" /> </p>
+
+<li>
+Click on the feature that you wish to change, in this case one of the colours:
+</li>
+
+<p><img src="colour 2.jpg" /> </p>
+
+<li>
+Select the appropriate colour from the options and click ok:
+</li>
+
+<p><img src="colour 3.jpg" /> </p>
+
+<li>
+Click ok to apply the changes and return to the simulation:
+</li>
+
+<p><img src="colour 4.jpg" /> </p>
+<p><img src="colour 5.jpg" /> </p>
+
+</ul>
+</li>
+</ul>
+</font>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;<BR>
+
+<a name="label6"><p><b><font size ="4" face="Calibri">
+Changing the contents of the tank and simulation aspects
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri">
+
+<p><b>
+Introduction
+</b></p>
+
+<p>
+All aspects of the simulation and tank can be fully customised, such as adding or removing shoals, changing the simulation mode and changing the simulation parameters etc. There are two simulation modes, foraging and predator mode. In the foraging mode food is distributed in random locations of the tank in regular intervals. As the fish consume the food, their energy increases. Once the collective energy of the entire shoal is over a certain amount, the shoal will reproduce. If the energy of a fish falls below a certain amount it will die. In the predator mode the fish are constantly reproducing and they cannot die due to a lack of energy, however, they can die by being eaten by a predator.
+
+</p>
+
+<p><b>
+Instructions
+</b></p>
+
+<ul>
+
+<li>
+<p>Adding a shoal:</p>
+
+<ul>
+<li>
+Click on Insert --> Shoal:
+</li>
+<p><img src="add shoal 1.jpg" /> </p>
+
+<li>
+Select number of shoals to add and click ok:
+</li>
+<p><img src="add shoal 2.jpg" /> </p>
+</ul>
+
+<li>
+<p>Removing a shoal:</p>
+
+<ul>
+<li>
+Click on the key at the bottom of the screen for the appropriate shoal:
+</li>
+<p><img src="colour 1.jpg" /> </p>
+
+<li>
+Click delete
+</li>
+<p><img src="delete shoal 1.jpg" /> </p>
+</ul>
+
+</li>
+
+<li>
+<a name="label8"><p>Changing a shoal's attributes:</p></a>
+
+<ul>
+<li>
+Click on the key at the bottom of the screen for the appropriate shoal:
+</li>
+<p><img src="colour 1.jpg" /> </p>
+
+<li>
+Change the appropriate values and click ok:
+</li>
+<p><img src="edit shoal 1.jpg" /> </p>
+</ul>
+
+</li>
+
+<p> <i>Please note that the above three facilities are either fully or partially disabled when connected to a database. </i> </p>
+
+<li>
+<p>Changing the simulation mode:</p>
+
+<ul>
+<li>
+Click on Tools --> Predator Mode:
+</li>
+<p><img src="change simulation 1.jpg" /> </p>
+
+</ul>
+
+</li>
+<p> <i>Please note that you can change back to the foraging mode by repeating the above. </i> </p>
+
+<li>
+<li>
+<p>Resetting the simulation:</p>
+
+<ul>
+<li>
+Click on Tools --> Reset:
+</li>
+<p><img src="change simulation 2.jpg" /> </p>
+
+</ul>
+
+</li>
+<p> <i>Please note that you can change back to the foraging mode by repeating the above. </i> </p>
+
+<li>
+<p>Changing the simulation options:</p>
+
+<ul>
+<li>
+Click on Tools --> Options:
+</li>
+<p><img src="options 1.jpg" /> </p>
+
+<li>
+Change the appropriate values and click apply or ok:
+</li>
+<p><img src="options 2.jpg" /> </p>
+<p><img src="options 3.jpg" /> </p>
+
+</ul>
+</li>
+</ul>
+</font>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+
+<BR>&nbsp;<BR>
+
+<a name="label7"><p><b><font size ="4" face="Calibri">
+Using the learning support tool
+</font></b></p></a> 
+
+<hr> </hr>
+
+<font size ="3" face="Calibri">
+
+<p><b>
+Introduction
+</b></p>
+
+<p>
+In addition to the funcionality discussed above, the simulation can also be run as an educational support tool. The topic that it covers is a primary school science topic on habitats and in particular food chains(QCA Unit 4B). The educational support tool has three components, the learning component, activity and quiz. The learning component consists of a set of teaching slides that correspond to the national curriculum and should be shown to the children at the beginning of the lesson. The activity component runs a simulation of a natural habitat containing a food chaing of producers and consumers. The prey consume the plants available in the tank, which grow back in regular intervals, whilst the predators consume the prey. Any kind of consumption results in an increase in energy, once the collective energy of the entire shoal is over a certain amount, the shoal will reproduce. If the energy of a fish falls below a certain amount or it is consumed it will die. The activity allows the teacher to alter the environment by changing the number of plants, changing the attributes of the prey and changing the attributes of the predators. The purpose of the activity is to allow the children to see the effect of the environment on predator-prey cycles. The quiz component consists of a set of multiple choice and interactive questions that are based on the learning component of the tool.
+</p>
+
+<p><b>
+Instructions
+</b></p>
+
+<ul>
+
+<li>
+<p>Using the learning component:</p>
+
+<ul>
+<li>
+From the main menu, click on Facts:
+</li>
+<p><img src="kids 2.jpg" /> </p>
+
+<li>
+Navigate between the slides by clicking on the arrow icons:
+</li>
+<p><img src="kids 5.jpg" /> </p>
+
+</ul>
+</li>
+
+
+<li>
+<p>Using the activity:</p>
+
+<ul>
+<li>
+From the main menu, click on Activity:
+</li>
+<p><img src="kids 3.jpg" /> </p>
+
+<li>
+After reading the initial message prompt, click ok:
+</li>
+<p><img src="kids 7.jpg" /> </p>
+
+<li>
+Change a shoals attributes by clicking on the appropriate icon on the left of the screen:
+</li>
+<p><img src="kids 8a.jpg" /> </p>
+
+
+<li>
+Change the appropriate values and click ok:
+</li>
+<p><img src="kids 8.jpg" /> </p>
+
+
+<li>
+Add plants by clicking or dragging the add plant icon on the left of the screen:
+</li>
+<p><img src="kids 9a.jpg" /> </p>
+
+
+<li>
+Position the plant in the tank by moving the cursor:
+</li>
+<p><img src="kids 9.jpg" /> </p>
+
+<li>
+Click the mouse button to confirm the position of the plant:
+</li>
+<p><img src="kids 10.jpg" /> </p>
+
+<li>
+Re-position a plant by clicking on it and dragging it.
+</li>
+
+<li>
+Remove a plant from the tank by clicking on it and pressing the delete key on the keyboard while keeping the mouse button pressed.
+</li>
+
+<li>
+Change the lights level by clicking the light icon on the left of the screen:
+</li>
+<p><img src="kids 11.jpg" /> </p>
+
+</ul>
+</li>
+
+<li>
+<p>Using the quiz component:</p>
+
+<ul>
+<li>
+From the main menu, click on Quiz:
+</li>
+<p><img src="kids 4.jpg" /> </p>
+
+<li>
+Answer the questions by either selecting an option from the multiple choice questions, or by moving components around the screen. Navigate between the questions by clicking on the arrow icons:
+</li>
+<p><img src="kids 6.jpg" /> </p>
+
+</ul>
+</li>
+</ul>
+</font>
+
+<font size="2" face = "Calibri"> <a href="#label"> 
+Back to top ^
+</a></font>
+</html>
