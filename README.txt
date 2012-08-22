@@ -2,7 +2,6 @@ Mohammad Abbas - Third year project, visualising data through an aquaruim simula
 
 The source code can be found in the src folder in the third_Year_Project1 folder in the appropriate packages
 
-The executable jar file can be found in the dist folder inside the main third_Year_Project1 folder.
-The jar file must be run within a folder that contains the lib folder, also contained in the dist dolder.
+An executable jar file can be produced by building the program through netbeans or by using the java jar command if you know what you're doing.
 
-The user manual folder contains a html file and set of images used for the user manual. Please note, clicking on help from the program will open a dead url.
+Help can be accessed in the program by selecting choosing "Help" from the menu bar and selecting "Contents".

@@ -68,6 +68,7 @@ public class GUI extends JFrame implements ComponentListener, MouseListener, Act
     public static int simulationSpeed=19;
     public static boolean schooling=true;
     public static int quizTotal=0;
+    public static String USER_MANUAL_ADDRESS = "http://dl.dropbox.com/u/11461372/Aquarium/user_manual/Manual.html";
     
     public GUI(String s) throws Exception //initialisation of different swing components
     {
@@ -942,7 +943,7 @@ public class GUI extends JFrame implements ComponentListener, MouseListener, Act
         {
             try
             {
-                java.awt.Desktop.getDesktop().browse(new URI("http://www.dcs.qmul.ac.uk/~mya3/project/user_manual/Manual.html"));
+                java.awt.Desktop.getDesktop().browse(new URI(USER_MANUAL_ADDRESS));
             } 
             catch(Exception e1){}
         }
